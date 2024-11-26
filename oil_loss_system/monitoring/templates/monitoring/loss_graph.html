@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамика потерь нефти</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Динамика потерь нефти</h1>
+    <div id="chart"></div>
+    <script>
+        var data = {{ plot_data | safe }};
+        Plotly.newPlot('chart', data);
+    </script>
+</body>
+</html>
+<!-- monitoring/templates/monitoring/loss_graph.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>График потерь нефти</title>
+</head>
+<body>
+    <h1>График потерь нефти</h1>
+    <!-- Отображаем график, используя data URL -->
+    <img src="data:image/png;base64,{{ graph }}" alt="График потерь">
+</body>
+</html>
